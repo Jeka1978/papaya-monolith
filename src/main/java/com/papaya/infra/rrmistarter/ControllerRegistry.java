@@ -1,21 +1,15 @@
 package com.papaya.infra.rrmistarter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.papaya.infra.rrmistarter.common.Adapter;
-import com.papaya.infra.rrmistarter.common.Pair;
-import com.papaya.infra.rrmistarter.common.Person;
+import com.papaya.infra.collections.Pair;
+import com.papaya.infra.common.Adapter;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.context.support.GenericApplicationContext;
-import org.springframework.http.MediaType;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
 import java.lang.reflect.Method;
@@ -39,7 +33,7 @@ public class ControllerRegistry {
     @Autowired
     private GenericApplicationContext context;
 
-    private Map<String, Pair<Method,Adapter>> map = new HashMap<>();
+    private Map<String, Pair<Method, Adapter>> map = new HashMap<>();
 
     @GetMapping("{methodId}")
     @SneakyThrows

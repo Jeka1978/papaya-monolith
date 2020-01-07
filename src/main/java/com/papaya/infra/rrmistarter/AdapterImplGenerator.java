@@ -1,11 +1,9 @@
 package com.papaya.infra.rrmistarter;
 
-import com.papaya.infra.rrmistarter.common.Adapter;
+import com.papaya.infra.common.Adapter;
 import com.papaya.infra.rrmistarter.props.PropertiesHolder;
 import org.reflections.Reflections;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.support.BeanDefinitionRegistry;
-import org.springframework.beans.factory.support.GenericBeanDefinition;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.context.support.GenericApplicationContext;
@@ -15,8 +13,6 @@ import org.springframework.web.client.RestTemplate;
 import javax.annotation.PostConstruct;
 import java.lang.reflect.Proxy;
 import java.util.Set;
-
-import static org.springframework.beans.factory.config.BeanDefinition.SCOPE_SINGLETON;
 
 /**
  * @author Evgeny Borisov
